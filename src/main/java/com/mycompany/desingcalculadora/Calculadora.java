@@ -4,6 +4,9 @@
  */
 package com.mycompany.desingcalculadora;
 
+import java.util.ArrayList;
+import javax.swing.JButton;
+
 /**
  *
  * @author Usuario
@@ -13,6 +16,8 @@ public class Calculadora extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Calculadora.class.getName());
 
     private String digito = "";
+    
+    ArrayList<JButton> a = new ArrayList<>();
 
     /**
      * Creates new form Calculadora
@@ -44,6 +49,12 @@ public class Calculadora extends javax.swing.JFrame {
         jb_num9 = new javax.swing.JButton();
         jb_num0 = new javax.swing.JButton();
         jt_resultado = new javax.swing.JTextField();
+        jb_soma = new javax.swing.JButton();
+        jb_subtracao = new javax.swing.JButton();
+        jb_multiplicacao = new javax.swing.JButton();
+        jb_divisao = new javax.swing.JButton();
+        jb_igual = new javax.swing.JButton();
+        jb_clean = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,98 +63,156 @@ public class Calculadora extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
         jPanel2.setForeground(new java.awt.Color(204, 204, 255));
 
+        jb_num1.setBackground(new java.awt.Color(153, 153, 255));
         jb_num1.setText("1");
         jb_num1.addActionListener(this::jb_num1ActionPerformed);
 
+        jb_num2.setBackground(new java.awt.Color(153, 153, 255));
         jb_num2.setText("4");
         jb_num2.addActionListener(this::jb_num2ActionPerformed);
 
+        jb_num3.setBackground(new java.awt.Color(153, 153, 255));
         jb_num3.setText("7");
         jb_num3.addActionListener(this::jb_num3ActionPerformed);
 
+        jb_num4.setBackground(new java.awt.Color(153, 153, 255));
         jb_num4.setText("0");
         jb_num4.addActionListener(this::jb_num4ActionPerformed);
 
+        jb_num5.setBackground(new java.awt.Color(153, 153, 255));
         jb_num5.setText("5");
         jb_num5.addActionListener(this::jb_num5ActionPerformed);
 
+        jb_num6.setBackground(new java.awt.Color(153, 153, 255));
         jb_num6.setText("8");
         jb_num6.addActionListener(this::jb_num6ActionPerformed);
 
+        jb_num7.setBackground(new java.awt.Color(153, 153, 255));
         jb_num7.setText("2");
         jb_num7.addActionListener(this::jb_num7ActionPerformed);
 
+        jb_num8.setBackground(new java.awt.Color(153, 153, 255));
         jb_num8.setText("6");
         jb_num8.addActionListener(this::jb_num8ActionPerformed);
 
+        jb_num9.setBackground(new java.awt.Color(153, 153, 255));
         jb_num9.setText("9");
         jb_num9.addActionListener(this::jb_num9ActionPerformed);
 
+        jb_num0.setBackground(new java.awt.Color(153, 153, 255));
         jb_num0.setText("3");
         jb_num0.addActionListener(this::jb_num0ActionPerformed);
 
         jt_resultado.setEditable(false);
-        jt_resultado.setBackground(new java.awt.Color(204, 204, 255));
+        jt_resultado.setBackground(new java.awt.Color(153, 153, 255));
         jt_resultado.setForeground(new java.awt.Color(204, 204, 255));
         jt_resultado.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jb_soma.setBackground(new java.awt.Color(153, 153, 255));
+        jb_soma.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jb_soma.setText("+");
+        jb_soma.addActionListener(this::jb_somaActionPerformed);
+
+        jb_subtracao.setBackground(new java.awt.Color(153, 153, 255));
+        jb_subtracao.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jb_subtracao.setText("-");
+        jb_subtracao.addActionListener(this::jb_subtracaoActionPerformed);
+
+        jb_multiplicacao.setBackground(new java.awt.Color(153, 153, 255));
+        jb_multiplicacao.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jb_multiplicacao.setText("*");
+        jb_multiplicacao.addActionListener(this::jb_multiplicacaoActionPerformed);
+
+        jb_divisao.setBackground(new java.awt.Color(153, 153, 255));
+        jb_divisao.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jb_divisao.setText("/");
+        jb_divisao.addActionListener(this::jb_divisaoActionPerformed);
+
+        jb_igual.setBackground(new java.awt.Color(153, 153, 255));
+        jb_igual.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jb_igual.setText("=");
+        jb_igual.addActionListener(this::jb_igualActionPerformed);
+
+        jb_clean.setBackground(new java.awt.Color(153, 153, 255));
+        jb_clean.setText("C");
+        jb_clean.addActionListener(this::jb_cleanActionPerformed);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jt_resultado)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jb_num1, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                    .addComponent(jb_num2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_num3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jb_soma, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jb_subtracao, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jb_multiplicacao, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23)
+                .addComponent(jb_divisao, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jb_num1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jb_num2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jb_num3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jb_clean, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jb_num4, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                    .addComponent(jb_num4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jb_num6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jb_num5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_num7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                    .addComponent(jb_num7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jb_num0, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(15, 15, 15))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jb_num8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jb_num9, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())))
-            .addComponent(jt_resultado)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jb_num0, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jb_num8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jb_num9, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jb_igual, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jt_resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jb_num1, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                    .addComponent(jb_num0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_num7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(4, 4, 4)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_soma, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_subtracao)
+                    .addComponent(jb_multiplicacao)
+                    .addComponent(jb_divisao, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jb_num7, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                    .addComponent(jb_num1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jb_num0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jb_num2, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                    .addComponent(jb_num2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jb_num5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_num8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jb_num8, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jb_num3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jb_num6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jb_num9, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addComponent(jb_num4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 35, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_num4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_igual, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_clean, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,46 +233,74 @@ public class Calculadora extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jb_num1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_num1ActionPerformed
-        jt_resultado.setText(jt_resultado.getText() + digito); 
-    }//GEN-LAST:event_jb_num1ActionPerformed
+    private void jb_cleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_cleanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_cleanActionPerformed
 
-    private void jb_num2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_num2ActionPerformed
-        digito = jb_num2.getText();
-    }//GEN-LAST:event_jb_num2ActionPerformed
+    private void jb_igualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_igualActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_igualActionPerformed
 
-    private void jb_num3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_num3ActionPerformed
-        digito = jb_num3.getText();
-    }//GEN-LAST:event_jb_num3ActionPerformed
+    private void jb_divisaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_divisaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_divisaoActionPerformed
 
-    private void jb_num4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_num4ActionPerformed
-        digito = jb_num4.getText();
-    }//GEN-LAST:event_jb_num4ActionPerformed
+    private void jb_multiplicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_multiplicacaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_multiplicacaoActionPerformed
 
-    private void jb_num5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_num5ActionPerformed
-        digito = jb_num5.getText();
-    }//GEN-LAST:event_jb_num5ActionPerformed
+    private void jb_subtracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_subtracaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_subtracaoActionPerformed
 
-    private void jb_num6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_num6ActionPerformed
-        digito = jb_num6.getText();
-    }//GEN-LAST:event_jb_num6ActionPerformed
-
-    private void jb_num7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_num7ActionPerformed
-        digito = jb_num7.getText();
-    }//GEN-LAST:event_jb_num7ActionPerformed
-
-    private void jb_num8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_num8ActionPerformed
-        digito = jb_num8.getText();
-    }//GEN-LAST:event_jb_num8ActionPerformed
-
-    private void jb_num9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_num9ActionPerformed
-        digito = jb_num9.getText();
-    }//GEN-LAST:event_jb_num9ActionPerformed
+    private void jb_somaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_somaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_somaActionPerformed
 
     private void jb_num0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_num0ActionPerformed
         digito = jb_num0.getText();
     }//GEN-LAST:event_jb_num0ActionPerformed
 
+    private void jb_num9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_num9ActionPerformed
+        digito = jb_num9.getText();
+    }//GEN-LAST:event_jb_num9ActionPerformed
+
+    private void jb_num8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_num8ActionPerformed
+        digito = jb_num8.getText();
+    }//GEN-LAST:event_jb_num8ActionPerformed
+
+    private void jb_num7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_num7ActionPerformed
+        digito = jb_num7.getText();
+    }//GEN-LAST:event_jb_num7ActionPerformed
+
+    private void jb_num6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_num6ActionPerformed
+        digito = jb_num6.getText();
+    }//GEN-LAST:event_jb_num6ActionPerformed
+
+    private void jb_num5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_num5ActionPerformed
+        digito = jb_num5.getText();
+    }//GEN-LAST:event_jb_num5ActionPerformed
+
+    private void jb_num4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_num4ActionPerformed
+        digito = jb_num4.getText();
+    }//GEN-LAST:event_jb_num4ActionPerformed
+
+    private void jb_num3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_num3ActionPerformed
+        digito = jb_num3.getText();
+    }//GEN-LAST:event_jb_num3ActionPerformed
+
+    private void jb_num2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_num2ActionPerformed
+        digito = jb_num2.getText();
+    }//GEN-LAST:event_jb_num2ActionPerformed
+
+    private void jb_num1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_num1ActionPerformed
+        jt_resultado.setText(jt_resultado.getText() + digito);
+    }//GEN-LAST:event_jb_num1ActionPerformed
+    private void digito (String digito){
+        digito = this.digito;
+       
+        
+    }
     /**
      * @param args the command line arguments
      */
@@ -215,6 +312,10 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JButton jb_clean;
+    private javax.swing.JButton jb_divisao;
+    private javax.swing.JButton jb_igual;
+    private javax.swing.JButton jb_multiplicacao;
     private javax.swing.JButton jb_num0;
     private javax.swing.JButton jb_num1;
     private javax.swing.JButton jb_num2;
@@ -225,6 +326,8 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JButton jb_num7;
     private javax.swing.JButton jb_num8;
     private javax.swing.JButton jb_num9;
+    private javax.swing.JButton jb_soma;
+    private javax.swing.JButton jb_subtracao;
     private javax.swing.JTextField jt_resultado;
     // End of variables declaration//GEN-END:variables
 }
